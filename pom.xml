@@ -24,8 +24,8 @@
         Maintain separation between the artifact id and the version to help prevent
         merge conflicts between commits changing the GA and those changing the V.
         -->
-        <version>7.2.0.GA</version>
-        <relativePath>../pom.xml</relativePath>
+        <version>wildfly-16.0.0.Final</version>
+        <relativePath>pom.xml</relativePath>
     </parent>
     <artifactId>helloworld</artifactId>
     <packaging>war</packaging>
@@ -67,5 +67,17 @@
         </dependency>
 
     </dependencies>
+
+<plugin>
+   <groupId>org.jboss.as.plugins</groupId>
+   <artifactId>jboss-as-maven-plugin</artifactId>
+   <version>7.5.Final</version>
+   <configuration>
+      <hostname>${hostname}</hostname>
+      <port>9991</port>
+      <username>wildfly</username>
+      <password>Devops@123456</password>
+   </configuration>
+</plugin>
 
 </project>
